@@ -324,11 +324,7 @@ loadWorkbook <- function(file, xlsxFile = NULL, isUnzipped = FALSE){
     wb$workbook.xml.rels <- c(wb$workbook.xml.rels,    
                               paste0('<Relationship Id="rId',rIds,'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotCacheDefinition" Target="pivotCache/pivotCacheDefinition',1:length(pivotDefXML),'.xml"/>')
     )
-    
-    
-    
-    )
-    
+
     
     caches <- getNodes(xml = workbook, tagIn = "<pivotCaches>")
     caches <- getChildlessNode(xml = caches, tag = "<pivotCache ")
